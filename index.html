@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institut Teknologi Kalimantan (ITK) — Kampus Integritas & Inovasi Penyangga IKN</title>
+  <meta name="description" content="Website resmi Institut Teknologi Kalimantan (ITK). 25 Program Studi S1, Akreditasi Baik Sekali, kampus strategis penyangga Ibu Kota Nusantara (IKN).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ============================================================
+       1. VARIABEL & RESET
+       ============================================================ */
+    :root {
+      --navy: #0A2540;
+      --blue: #1A5F9E;
+      --blue-light: #E8F1FA;
+      --gold: #F2A900;
+      --white: #FFFFFF;
+      --gray-100: #F7F9FC;
+      --gray-200: #E9EDF3;
+      --gray-600: #5A6B7B;
+      --gray-800: #2D3E50;
+      --shadow-sm: 0 2px 8px rgba(10, 37, 64, 0.08);
+      --shadow-md: 0 8px 24px rgba(10, 37, 64, 0.12);
+      --shadow-lg: 0 20px 50px rgba(10, 37, 64, 0.2);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --transition: all 0.3s ease;
+      --container: 1200px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--gray-800); background: var(--white);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; }
+    .container {
+      width: 100%; max-width: var(--container);
+      margin-inline: auto; padding-inline: 20px;
+    }
+
+    /* ============================================================
+       2. TOP BAR
+       ============================================================ */
+    .top-bar {
+      background: var(--navy); color: rgba(255, 255, 255, 0.8);
+      font-size: 0.8rem; padding: 8px 0;
+    }
+    .top-bar .container {
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 8px;
+    }
+    .top-bar-left, .top-bar-right {
+      display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    }
+    .top-bar a {
+      color: rgba(255, 255, 255, 0.75);
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .top-bar a:hover { color: var(--gold); }
+    .top-bar i { font-size: 0.7rem; }
+    .top-bar .divider { width: 1px; height: 14px; background: rgba(255, 255, 255, 0.2); }
+
+    /* ============================================================
+       3. NAVBAR UTAMA
+       ============================================================ */
+    .navbar {
+      background: var(--white); box-shadow: var(--shadow-sm);
+      position: sticky; top: 0; z-index: 1000;
+      border-bottom: 3px solid var(--gold);
+    }
+    .navbar .container {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; padding-block: 12px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .logo-mark {
+      width: 48px; height: 48px; background: var(--navy);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      color: var(--white); font-weight: 800; font-size: 1.1rem;
+      letter-spacing: -0.5px; position: relative; overflow: hidden; flex-shrink: 0;
+    }
+    .logo-mark::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 4px; background: var(--gold);
+    }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .logo-text strong { font-size: 1.1rem; color: var(--navy); font-weight: 800; letter-spacing: -0.3px; }
+    .logo-text span { font-size: 0.65rem; color: var(--gray-600); font-weight: 500; letter-spacing: 0.4px; text-transform: uppercase; }
+
+    .nav-menu { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+    .nav-menu > li > a {
+      display: block; padding: 8px 12px; font-size: 0.85rem;
+      font-weight: 600; color: var(--gray-800);
+      border-radius: 8px; white-space: nowrap;
+    }
+    .nav-menu > li > a:hover, .nav-menu > li > a.active {
+      background: var(--blue-light); color: var(--blue);
+    }
+    .nav-cta {
+      background: var(--gold) !important; color: var(--navy) !important;
+      font-weight: 700 !important; padding: 8px 18px !important;
+      border-radius: 50px !important;
+    }
+    .nav-cta:hover { background: #d99400 !important; }
+    .nav-cta.active { background: #d99400 !important; }
+
+    /* Search (Desktop) */
+    .nav-search {
+      position: relative;
+      display: flex; align-items: center;
+      background: var(--gray-100); border: 1px solid var(--gray-200);
+      border-radius: 50px; padding: 4px 4px 4px 16px; gap: 6px;
+      flex-shrink: 0;
+    }
+    .nav-search:focus-within {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(26, 95, 158, 0.12);
+    }
+    .nav-search input {
+      border: none; background: transparent; outline: none;
+      font-size: 0.82rem; width: 160px;
+      color: var(--gray-800);
+    }
+    .nav-search input::placeholder { color: var(--gray-600); opacity: 0.7; }
+    .nav-search button {
+      border: none; background: var(--navy); color: var(--white);
+      width: 32px; height: 32px; border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; transition: var(--transition); flex-shrink: 0;
+    }
+    .nav-search button:hover { background: var(--blue); }
+
+    /* Search Dropdown (Desktop) */
+    .search-results {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      width: 380px;
+      max-height: 440px;
+      overflow-y: auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--gray-200);
+      display: none;
+      z-index: 100;
+    }
+    .search-results.active { display: block; animation: dropIn 0.2s ease; }
+    @keyframes dropIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .search-result-item {
+      padding: 12px 16px; cursor: pointer;
+      border-bottom: 1px solid var(--gray-200);
+      transition: background 0.15s ease;
+    }
+    .search-result-item:hover { background: var(--blue-light); }
+    .search-result-item:last-child { border-bottom: none; }
+    .search-result-type {
+      display: inline-block;
+      font-size: 0.6rem; font-weight: 700;
+      color: var(--blue); background: var(--blue-light);
+      padding: 2px 8px; border-radius: 4px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .search-result-title {
+      font-size: 0.85rem; font-weight: 600; color: var(--navy); line-height: 1.3;
+    }
+    .search-result-subtitle { font-size: 0.72rem; color: var(--gray-600); margin-top: 2px; }
+    .search-empty {
+      padding: 20px; text-align: center;
+      color: var(--gray-600); font-size: 0.82rem;
+    }
+
+    /* Mobile Buttons */
+    .mobile-search-btn, .menu-toggle {
+      display: none;
+      background: none; border: none;
+      font-size: 1.2rem; color: var(--navy);
+      cursor: pointer; padding: 8px;
+    }
+    .menu-toggle { font-size: 1.4rem; }
+
+    /* ============================================================
+       4. HERO SECTION
+       ============================================================ */
+    .hero {
+      background: linear-gradient(135deg, #0A2540 0%, #0E3A5C 50%, #1A5F9E 100%);
+      color: var(--white); padding: 80px 0 90px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(242, 169, 0, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
+        repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 80px);
+      pointer-events: none;
+    }
+    .hero .container {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; max-width: 900px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(242, 169, 0, 0.15);
+      border: 1px solid rgba(242, 169, 0, 0.4);
+      color: var(--gold); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 6px 18px; border-radius: 50px; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(1.9rem, 5vw, 3.2rem); font-weight: 800;
+      line-height: 1.2; letter-spacing: -1px; margin-bottom: 16px;
+    }
+    .hero h1 .highlight { color: var(--gold); }
+    .hero-sub {
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 700px; margin-bottom: 12px;
+    }
+    .hero-location {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.82rem; color: rgba(255, 255, 255, 0.65); margin-bottom: 32px;
+    }
+    .hero-location i { color: var(--gold); }
+    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 50px;
+      font-weight: 700; font-size: 0.9rem;
+      cursor: pointer; border: 2px solid transparent;
+      transition: var(--transition);
+    }
+    .btn-primary { background: var(--gold); color: var(--navy); }
+    .btn-primary:hover { background: #d99400; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(242, 169, 0, 0.4); }
+    .btn-outline { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.4); }
+    .btn-outline:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--white); transform: translateY(-2px); }
+    .btn-secondary {
+      background: var(--navy); color: var(--white);
+      border: 2px solid var(--navy);
+    }
+    .btn-secondary:hover { background: var(--blue); border-color: var(--blue); transform: translateY(-2px); }
+
+    /* ============================================================
+       5. STATISTIK KAMPUS
+       ============================================================ */
+    .stats { background: var(--white); padding: 0 0 50px; margin-top: -45px; position: relative; z-index: 10; }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+      background: var(--white); border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md); padding: 32px 24px;
+      border: 1px solid var(--gray-200);
+    }
+    .stat-item { text-align: center; padding: 8px 12px; border-right: 1px solid var(--gray-200); }
+    .stat-item:last-child { border-right: none; }
+    .stat-icon { font-size: 1.3rem; color: var(--blue); margin-bottom: 8px; }
+    .stat-number { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--navy); line-height: 1.1; letter-spacing: -1px; }
+    .stat-number .accent { color: var(--gold); }
+    .stat-label { font-size: 0.75rem; font-weight: 600; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 4px; }
+
+    /* ============================================================
+       6. SECTION UMUM
+       ============================================================ */
+    .section { padding: 70px 0; }
+    .section-header { text-align: center; max-width: 650px; margin: 0 auto 48px; }
+    .section-tag {
+      display: inline-block; background: var(--blue-light); color: var(--blue);
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 5px 16px; border-radius: 50px; margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800;
+      color: var(--navy); letter-spacing: -0.8px; margin-bottom: 10px; line-height: 1.25;
+    }
+    .section-desc { font-size: 0.92rem; color: var(--gray-600); line-height: 1.7; }
+    .subsection-title {
+      font-size: 1.1rem; font-weight: 800; color: var(--navy);
+      text-align: center; margin: 48px 0 28px;
+      letter-spacing: -0.3px;
+    }
+
+    /* ============================================================
+       7. PROFIL & SOTK SECTION
+       ============================================================ */
+    .profil-section { background: var(--white); }
+
+    .visi-misi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+    .visi-card, .misi-card {
+      background: var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      border: 1px solid var(--gray-200);
+      position: relative;
+      overflow: hidden;
+    }
+    .visi-card {
+      background: linear-gradient(135deg, var(--navy), #124A7A);
+      color: var(--white);
+      border: none;
+    }
+    .visi-card::after {
+      content: ''; position: absolute; top: -50px; right: -50px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(242, 169, 0, 0.2), transparent 70%);
+    }
+    .visi-card h3, .misi-card h3 {
+      font-size: 1.1rem; font-weight: 800;
+      margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+      position: relative; z-index: 2;
+    }
+    .visi-card h3 i { color: var(--gold); }
+    .misi-card h3 i { color: var(--blue); }
+    .visi-card p {
+      font-size: 0.92rem; line-height: 1.7;
+      color: rgba(255, 255, 255, 0.88);
+      position: relative; z-index: 2;
+    }
+    .misi-card ul {
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .misi-card li {
+      font-size: 0.85rem; line-height: 1.6;
+      padding-left: 26px; position: relative;
+      color: var(--gray-800);
+    }
+    .misi-card li::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free'; font-weight: 900;
+      position: absolute; left: 0; top: 2px;
+      color: var(--gold); font-size: 0.75rem;
+    }
+
+    /* SOTK Grid */
+    .sotk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .sotk-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .sotk-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold);
+    }
+    .sotk-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1.2rem;
+      margin: 0 auto 14px;
+    }
+    .sotk-card h4 {
+      font-size: 0.88rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .sotk-card p {
+      font-size: 0.75rem; color: var(--gray-600); line-height: 1.5;
+    }
+
+    /* ============================================================
+       8. PROGRAM STUDI — CARD GRID
+       ============================================================ */
+    .prodi-section { background: var(--gray-100); }
+    .prodi-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px;
+    }
+    .prodi-card {
+      background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: var(--radius); padding: 22px 20px;
+      transition: var(--transition); position: relative; overflow: hidden;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .prodi-card::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--gold));
+      opacity: 0; transition: var(--transition);
+    }
+    .prodi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: transparent; }
+    .prodi-card:hover::before { opacity: 1; }
+    .prodi-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+    .prodi-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--blue-light); color: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .badge-s1 {
+      background: var(--navy); color: var(--white);
+      font-size: 0.6rem; font-weight: 800; letter-spacing: 0.8px;
+      padding: 3px 10px; border-radius: 50px; flex-shrink: 0;
+    }
+    .badge-akreditasi {
+      display: inline-block; background: #E6F4EA; color: #1E7B34;
+      font-size: 0.6rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-top: 2px;
+    }
+    .prodi-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
+    .prodi-card p { font-size: 0.75rem; color: var(--gray-600); line-height: 1.5; flex-grow: 1; }
+    .prodi-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.75rem; font-weight: 700; color: var(--blue); margin-top: 4px;
+      cursor: pointer;
+    }
+    .prodi-link:hover { color: var(--gold); gap: 10px; }
+    .prodi-actions { text-align: center; margin-top: 40px; }
+
+    /* ============================================================
+       9. PMB 2026 SECTION
+       ============================================================ */
+    .pmb-section {
+      background: linear-gradient(135deg, #0A2540 0%, #0E3A5C 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .pmb-section::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 80% 20%, rgba(242, 169, 0, 0.1), transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.04), transparent 50%);
+      pointer-events: none;
+    }
+    .pmb-section .container { position: relative; z-index: 2; }
+    .pmb-section .section-tag {
+      background: rgba(242, 169, 0, 0.15); color: var(--gold);
+    }
+    .pmb-section .section-title { color: var(--white); }
+    .pmb-section .section-desc { color: rgba(255, 255, 255, 0.75); }
+
+    /* Jalur Cards */
+    .jalur-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px; margin-bottom: 48px;
+    }
+    .jalur-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .jalur-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-4px);
+      border-color: rgba(242, 169, 0, 0.4);
+    }
+    .jalur-card::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--gold);
+      opacity: 0.7;
+    }
+    .jalur-badge {
+      display: inline-block; background: var(--gold);
+      color: var(--navy); font-size: 0.65rem; font-weight: 800;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 50px;
+      margin-bottom: 14px;
+    }
+    .jalur-card h3 {
+      font-size: 1.05rem; font-weight: 800; color: var(--white);
+      margin-bottom: 8px;
+    }
+    .jalur-card p {
+      font-size: 0.82rem; color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6; margin-bottom: 14px;
+    }
+    .jalur-features {
+      display: flex; flex-direction: column; gap: 6px;
+      margin-bottom: 16px;
+    }
+    .jalur-features li {
+      font-size: 0.75rem; color: rgba(255, 255, 255, 0.75);
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .jalur-features li i {
+      color: var(--gold); font-size: 0.65rem; margin-top: 4px; flex-shrink: 0;
+    }
+    .jalur-timeline {
+      font-size: 0.72rem; color: var(--gold);
+      font-weight: 600; padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex; align-items: center; gap: 6px;
+    }
+
+    /* Timeline PMB */
+    .pmb-timeline-wrap {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 40px;
+    }
+    .pmb-timeline-wrap h3 {
+      font-size: 1.05rem; font-weight: 800; color: var(--white);
+      margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
+    }
+    .pmb-timeline-wrap h3 i { color: var(--gold); }
+    .pmb-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      position: relative;
+    }
+    .timeline-item {
+      position: relative;
+      padding-top: 28px;
+    }
+    .timeline-item::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; width: 14px; height: 14px;
+      background: var(--gold); border-radius: 50%;
+      border: 3px solid var(--navy);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+    .timeline-item::after {
+      content: ''; position: absolute;
+      top: 6px; left: 20px; right: 0;
+      height: 2px; background: rgba(242, 169, 0, 0.3);
+    }
+    .timeline-item:last-child::after { display: none; }
+    .timeline-item .tl-date {
+      font-size: 0.7rem; color: var(--gold);
+      font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .timeline-item .tl-title {
+      font-size: 0.9rem; font-weight: 700; color: var(--white);
+      margin-bottom: 2px;
+    }
+    .timeline-item .tl-desc {
+      font-size: 0.72rem; color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* CTA PMB */
+    .pmb-cta {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(242, 169, 0, 0.08);
+      border: 2px dashed rgba(242, 169, 0, 0.4);
+      border-radius: var(--radius-lg);
+    }
+    .pmb-cta h3 {
+      font-size: 1.3rem; font-weight: 800; color: var(--white);
+      margin-bottom: 8px;
+    }
+    .pmb-cta p {
+      font-size: 0.9rem; color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 22px;
+    }
+
+    /* ============================================================
+       10. RISET & INOVASI SECTION
+       ============================================================ */
+    .riset-section { background: var(--white); }
+
+    .riset-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .riset-card {
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .riset-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      background: var(--white);
+      border-color: var(--blue);
+    }
+    .riset-icon {
+      width: 48px; height: 48px;
+      background: var(--blue-light); color: var(--blue);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.15rem; margin-bottom: 14px;
+    }
+    .riset-card h3 {
+      font-size: 0.95rem; font-weight: 800;
+      color: var(--navy); margin-bottom: 8px;
+    }
+    .riset-card p {
+      font-size: 0.8rem; color: var(--gray-600); line-height: 1.6;
+    }
+
+    /* Inovasi untuk IKN */
+    .inovasi-ikn {
+      background: linear-gradient(135deg, var(--blue-light), #F0F7FF);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      border: 1px solid var(--gray-200);
+      margin-bottom: 32px;
+    }
+    .inovasi-ikn h3 {
+      font-size: 1.15rem; font-weight: 800; color: var(--navy);
+      margin-bottom: 8px; display: flex; align-items: center; gap: 10px;
+    }
+    .inovasi-ikn h3 i { color: var(--gold); }
+    .inovasi-ikn > p {
+      font-size: 0.85rem; color: var(--gray-600);
+      line-height: 1.7; margin-bottom: 24px;
+    }
+    .inovasi-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+    }
+    .inovasi-item {
+      background: var(--white);
+      padding: 16px 18px;
+      border-radius: 10px;
+      border-left: 4px solid var(--gold);
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .inovasi-item i {
+      color: var(--gold); font-size: 1rem; margin-top: 2px; flex-shrink: 0;
+    }
+    .inovasi-item strong {
+      display: block; font-size: 0.85rem;
+      color: var(--navy); margin-bottom: 2px;
+    }
+    .inovasi-item span {
+      font-size: 0.75rem; color: var(--gray-600); line-height: 1.5;
+    }
+
+    /* Stats Riset */
+    .riset-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+    }
+    .riset-stat {
+      text-align: center; color: var(--white);
+      padding: 8px;
+    }
+    .riset-stat .rs-num {
+      font-size: 1.8rem; font-weight: 800;
+      color: var(--gold); line-height: 1;
+      letter-spacing: -1px;
+    }
+    .riset-stat .rs-lbl {
+      font-size: 0.72rem; color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase; letter-spacing: 0.8px;
+      margin-top: 8px; font-weight: 600;
+    }
+
+    /* ============================================================
+       11. BERITA & PENGUMUMAN
+       ============================================================ */
+    .news-section { background: var(--gray-100); }
+    .news-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;
+    }
+    .news-card {
+      background: var(--white); border-radius: var(--radius);
+      overflow: hidden; border: 1px solid var(--gray-200);
+      transition: var(--transition); display: flex; flex-direction: column;
+    }
+    .news-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .news-thumb {
+      height: 160px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255, 255, 255, 0.25); font-size: 3rem; overflow: hidden;
+    }
+    .news-thumb::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(242, 169, 0, 0.15), transparent 60%);
+    }
+    .news-body {
+      padding: 20px; display: flex; flex-direction: column;
+      gap: 10px; flex-grow: 1;
+    }
+    .news-meta {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 0.7rem; color: var(--gray-600); font-weight: 500;
+    }
+    .news-meta .category {
+      background: var(--blue-light); color: var(--blue);
+      padding: 2px 10px; border-radius: 50px;
+      font-weight: 700; font-size: 0.65rem;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .news-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); line-height: 1.4; }
+    .news-card:hover h3 { color: var(--blue); }
+    .news-card p { font-size: 0.78rem; color: var(--gray-600); line-height: 1.6; flex-grow: 1; }
+    .news-read {
+      font-size: 0.75rem; font-weight: 700; color: var(--gold);
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 4px; background: none; border: none;
+      cursor: pointer; padding: 0; text-align: left;
+      transition: var(--transition);
+    }
+    .news-read:hover { gap: 10px; color: #d99400; }
+
+    /* ============================================================
+       12. MODAL UMUM
+       ============================================================ */
+    .modal {
+      display: none; position: fixed; inset: 0;
+      background: rgba(10, 37, 64, 0.7); z-index: 2000;
+      align-items: center; justify-content: center;
+      padding: 20px; backdrop-filter: blur(4px);
+    }
+    .modal.active { display: flex; }
+    .modal-content {
+      background: var(--white); border-radius: var(--radius-lg);
+      max-width: 620px; width: 100%; max-height: 90vh;
+      overflow-y: auto; position: relative;
+      padding: 32px; box-shadow: var(--shadow-lg);
+      animation: modalIn 0.3s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .modal-close {
+      position: absolute; top: 14px; right: 18px;
+      background: none; border: none; font-size: 1.6rem;
+      color: var(--gray-600); cursor: pointer;
+      transition: var(--transition); line-height: 1;
+    }
+    .modal-close:hover { color: var(--navy); }
+
+    /* Prodi Modal Detail */
+    .modal-content h2 {
+      font-size: 1.4rem; color: var(--navy); font-weight: 800;
+      margin-bottom: 6px; padding-right: 30px;
+    }
+    .modal-meta {
+      display: flex; flex-wrap: wrap; gap: 8px 16px;
+      font-size: 0.8rem; color: var(--gray-600);
+      margin-bottom: 20px; padding-bottom: 16px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .modal-meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .modal-meta i { color: var(--blue); }
+    .modal-badge {
+      display: inline-block; background: var(--navy); color: var(--white);
+      font-size: 0.65rem; font-weight: 700;
+      padding: 3px 12px; border-radius: 50px; margin-bottom: 14px;
+    }
+    .modal-desc {
+      font-size: 0.9rem; color: var(--gray-800);
+      line-height: 1.7; margin-bottom: 18px;
+    }
+    .modal-section-title {
+      font-size: 0.85rem; font-weight: 700; color: var(--navy);
+      text-transform: uppercase; letter-spacing: 0.8px;
+      margin-bottom: 8px; margin-top: 16px;
+    }
+    .modal-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .modal-list li {
+      background: var(--blue-light); color: var(--blue);
+      font-size: 0.75rem; font-weight: 600;
+      padding: 6px 14px; border-radius: 50px;
+    }
+    .modal-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 24px; font-size: 0.8rem; font-weight: 700;
+      color: var(--gold);
+    }
+    .modal-link:hover { gap: 12px; }
+
+    /* Search Modal (Mobile) */
+    .search-modal-content {
+      max-width: 560px;
+    }
+    .search-modal-content h2 {
+      font-size: 1.2rem; margin-bottom: 16px;
+    }
+    .search-modal-input {
+      width: 100%; padding: 14px 18px;
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      font-size: 0.95rem; font-family: inherit;
+      outline: none; transition: var(--transition);
+      background: var(--gray-100);
+    }
+    .search-modal-input:focus {
+      border-color: var(--blue); background: var(--white);
+      box-shadow: 0 0 0 3px rgba(26, 95, 158, 0.12);
+    }
+    .mobile-search-results {
+      margin-top: 16px;
+      max-height: 400px; overflow-y: auto;
+      border-radius: 10px;
+      border: 1px solid var(--gray-200);
+      display: none;
+    }
+    .mobile-search-results.active { display: block; }
+    .mobile-search-results .search-result-item {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--gray-200);
+      cursor: pointer; transition: var(--transition);
+    }
+    .mobile-search-results .search-result-item:hover {
+      background: var(--blue-light);
+    }
+    .mobile-search-results .search-result-item:last-child { border-bottom: none; }
+
+    /* News Detail Modal */
+    .news-modal-content { max-width: 720px; }
+    .news-modal-meta {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 16px;
+    }
+    .news-modal-meta .category {
+      background: var(--blue-light); color: var(--blue);
+      padding: 3px 12px; border-radius: 50px;
+      font-weight: 700; font-size: 0.7rem;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .news-modal-meta .date {
+      font-size: 0.8rem; color: var(--gray-600);
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .news-modal-content h2 {
+      font-size: 1.35rem; line-height: 1.35;
+      margin-bottom: 12px; padding-right: 20px;
+    }
+    .news-modal-body {
+      font-size: 0.92rem; color: var(--gray-800);
+      line-height: 1.8;
+    }
+    .news-modal-body p { margin-bottom: 14px; }
+    .news-modal-body strong { color: var(--navy); }
+
+    /* ============================================================
+       13. FOOTER
+       ============================================================ */
+    .footer {
+      background: var(--navy); color: rgba(255, 255, 255, 0.75);
+      padding-top: 60px; font-size: 0.85rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 40px; padding-bottom: 40px;
+    }
+    .footer-brand .logo { margin-bottom: 16px; }
+    .footer-brand .logo-text strong { color: var(--white); }
+    .footer-brand .logo-text span { color: rgba(255, 255, 255, 0.5); }
+    .footer-brand p {
+      font-size: 0.8rem; line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6); margin-bottom: 16px;
+    }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem; transition: var(--transition);
+    }
+    .footer-social a:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+    .footer h4 {
+      color: var(--white); font-size: 0.85rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px;
+    }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.6); font-size: 0.8rem;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .footer-links a:hover { color: var(--gold); padding-left: 4px; }
+    .footer-contact li {
+      display: flex; gap: 12px; margin-bottom: 14px;
+      font-size: 0.8rem; line-height: 1.6;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .footer-contact i { color: var(--gold); margin-top: 3px; flex-shrink: 0; }
+    .footer-map {
+      border-radius: var(--radius); overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-map iframe {
+      width: 100%; height: 180px; border: 0;
+      display: block; filter: grayscale(0.3) contrast(1.1);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 20px 0;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 10px;
+      font-size: 0.75rem; color: rgba(255, 255, 255, 0.4);
+    }
+    .footer-bottom a { color: var(--gold); }
+
+    /* ============================================================
+       14. RESPONSIF
+       ============================================================ */
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+      .nav-search input { width: 110px; }
+      .visi-misi-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 860px) {
+      .menu-toggle { display: flex; }
+      .mobile-search-btn { display: flex; }
+      .nav-search { display: none; }
+      .nav-menu {
+        display: none; position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--white);
+        flex-direction: column; align-items: stretch;
+        padding: 16px 20px; gap: 4px;
+        box-shadow: var(--shadow-md);
+        border-top: 1px solid var(--gray-200);
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+      }
+      .nav-menu.open { display: flex; }
+      .nav-menu > li > a { padding: 12px 14px; font-size: 0.9rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(1), .stat-item:nth-child(2) {
+        border-bottom: 1px solid var(--gray-200); padding-bottom: 20px;
+      }
+      .hero { padding: 60px 0 70px; }
+      .search-results { width: 320px; }
+    }
+    @media (max-width: 600px) {
+      .top-bar .container { justify-content: center; text-align: center; }
+      .top-bar-right { display: none; }
+      .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; }
+      .btn { justify-content: center; width: 100%; }
+      .stats-grid { grid-template-columns: 1fr; padding: 20px; }
+      .stat-item { border-right: none !important; border-bottom: 1px solid var(--gray-200); padding-bottom: 16px; }
+      .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .section { padding: 50px 0; }
+      .modal-content { padding: 24px; }
+      .visi-card, .misi-card { padding: 22px; }
+      .inovasi-ikn { padding: 24px; }
+      .pmb-timeline-wrap { padding: 20px; }
+      .riset-stats { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       TOP BAR
+       ============================================================ -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="mailto:humas@itk.ac.id"><i class="fas fa-envelope"></i> humas@itk.ac.id</a>
+        <span class="divider"></span>
+        <a href="tel:+625428530800"><i class="fas fa-phone"></i> (0542) 8530800</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://pmb.itk.ac.id" target="_blank" rel="noopener"><i class="fas fa-user-plus"></i> PMB ITK</a>
+        <a href="https://siakad.itk.ac.id" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i> SIAKAD</a>
+        <a href="https://simaset.itk.ac.id" target="_blank" rel="noopener"><i class="fas fa-boxes"></i> SIM-ASET</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVBAR UTAMA
+       ============================================================ -->
+  <header class="navbar">
+    <div class="container">
+      <a href="#beranda" class="logo" aria-label="Beranda ITK">
+        <div class="logo-mark">ITK</div>
+        <div class="logo-text">
+          <strong>Institut Teknologi</strong>
+          <span>Kalimantan</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#beranda" class="active">Beranda</a></li>
+        <li><a href="#profil">Profil &amp; SOTK</a></li>
+        <li><a href="#prodi">Program Studi</a></li>
+        <li><a href="#pmb" class="nav-cta"><i class="fas fa-arrow-right-to-bracket"></i> PMB 2026</a></li>
+        <li><a href="#riset">Riset &amp; Inovasi</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+
+      <!-- Search Desktop -->
+      <div class="nav-search" id="navSearchWrap">
+        <input type="search" id="searchInput" placeholder="Cari di ITK..."
+          aria-label="Pencarian" autocomplete="off">
+        <button type="button" aria-label="Cari">
+          <i class="fas fa-search"></i>
+        </button>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+
+      <!-- Tombol Mobile -->
+      <button class="mobile-search-btn" onclick="openSearchModal()" aria-label="Buka pencarian">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section class="hero" id="beranda">
+    <div class="container">
+      <div class="hero-badge"><i class="fas fa-star"></i> Akreditasi Baik Sekali</div>
+      <h1>Selamat Datang di <span class="highlight">Institut Teknologi Kalimantan</span></h1>
+      <p class="hero-sub">
+        Kampus Integritas &amp; Inovasi Penyangga Ibu Kota Nusantara (IKN).
+        Building Future Leaders in Technology melalui pendidikan sains dan rekayasa yang unggul.
+      </p>
+      <div class="hero-location">
+        <i class="fas fa-location-dot"></i>
+        Jl. Soekarno-Hatta Km. 15, Karang Joang, Balikpapan Utara, Kalimantan Timur
+      </div>
+      <div class="hero-buttons">
+        <a href="#pmb" class="btn btn-primary"><i class="fas fa-pen-to-square"></i> Pendaftaran PMB</a>
+        <a href="#prodi" class="btn btn-outline"><i class="fas fa-book-open"></i> Lihat Program Studi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STATISTIK
+       ============================================================ -->
+  <section class="stats" aria-label="Statistik ITK">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+          <div class="stat-number">25</div>
+          <div class="stat-label">Program Studi S1</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-award"></i></div>
+          <div class="stat-number">Baik <span class="accent">Sekali</span></div>
+          <div class="stat-label">Akreditasi Kampus</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-chair"></i></div>
+          <div class="stat-number">1.307<span class="accent">+</span></div>
+          <div class="stat-label">Daya Tampung PMB 2026</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <div class="stat-number">4.800<span class="accent">+</span></div>
+          <div class="stat-label">Mahasiswa Aktif</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROFIL & SOTK
+       ============================================================ -->
+  <section class="section profil-section" id="profil">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Profil Institusi</span>
+        <h2 class="section-title">Tentang Institut Teknologi Kalimantan</h2>
+        <p class="section-desc">
+          ITK adalah perguruan tinggi negeri di Balikpapan, Kalimantan Timur, yang berkomitmen
+          menghasilkan lulusan unggul di bidang sains dan teknologi untuk mendukung pembangunan
+          nasional, khususnya Ibu Kota Nusantara (IKN).
+        </p>
+      </div>
+
+      <!-- Visi & Misi -->
+      <div class="visi-misi-grid">
+        <div class="visi-card">
+          <h3><i class="fas fa-eye"></i> Visi</h3>
+          <p>
+            Menjadi institut teknologi yang unggul dan berdaya saing global dalam
+            pengembangan sains dan teknologi, serta berkontribusi pada kemajuan
+            bangsa dan kesejahteraan masyarakat.
+          </p>
+        </div>
+        <div class="misi-card">
+          <h3><i class="fas fa-bullseye"></i> Misi</h3>
+          <ul>
+            <li>Menyelenggarakan pendidikan tinggi sains dan teknologi yang berkualitas, relevan, dan berdaya saing.</li>
+            <li>Mengembangkan penelitian dan inovasi yang berkontribusi pada pembangunan berkelanjutan, khususnya IKN.</li>
+            <li>Melaksanakan pengabdian kepada masyarakat berbasis teknologi tepat guna.</li>
+            <li>Membangun kerja sama strategis dengan pemerintah, industri, dan perguruan tinggi nasional maupun internasional.</li>
+            <li>Mengembangkan tata kelola institusi yang transparan, akuntabel, dan berintegritas.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SOTK -->
+      <h3 class="subsection-title">Struktur Organisasi &amp; Tata Kelola (SOTK)</h3>
+      <div class="sotk-grid">
+        <div class="sotk-card">
+          <div class="sotk-icon"><i class="fas fa-user-tie"></i></div>
+          <h4>Rektor</h4>
+          <p>Pimpinan tertinggi institusi</p>
+        </div>
+        <div class="sotk-card">
+          <div class="sotk-icon"><i class="fas fa-user-graduate"></i></div>
+          <h4>Wakil Rektor Akademik &amp; Kemahasiswaan</h4>
+          <p>Bidang pendidikan dan kemahasiswaan</p>
+        </div>
+        <div class="sotk-card">
+          <div class="sotk-icon"><i class="fas fa-coins"></i></div>
+          <h4>Wakil Rektor Umum &amp; Keuangan</h4>
+          <p>Bidang administrasi dan keuangan</p>
+        </div>
+        <div class="sotk-card">
+          <div class="sotk-icon"><i class="fas fa-network-wired"></i></div>
+          <h4>Wakil Rektor Perencanaan, Kerja Sama &amp; SI</h4>
+          <p>Bidang perencanaan dan sistem informasi</p>
+        </div>
+        <div class="sotk-card">
+          <div class="sotk-icon"><i class="fas fa-flask"></i></div>
+          <h4>Dekan FSTI</h4>
+          <p>Fakultas Sains dan Teknologi Informasi</p>
+        </div>
+        <div class="sotk-card">
+          <div class="sotk-icon"><i class="fas fa-city"></i></div>
+          <h4>Dekan FPB</h4>
+          <p>Fakultas Pembangunan Berkelanjutan</p>
+        </div>
+        <div class="sotk-card">
+          <div class="sotk-icon"><i class="fas fa-industry"></i></div>
+          <h4>Dekan FRTI</h4>
+          <p>Fakultas Rekayasa dan Teknologi Industri</p>
+        </div>
+        <div class="sotk-card">
+          <div class="sotk-icon"><i class="fas fa-building-columns"></i></div>
+          <h4>Kepala Biro Umum &amp; Keuangan</h4>
+          <p>Layanan administrasi institusi</p>
+        </div>
+        <div class="sotk-card">
+          <div class="sotk-icon"><i class="fas fa-microscope"></i></div>
+          <h4>Kepala LPPM</h4>
+          <p>Lembaga Penelitian dan Pengabdian kepada Masyarakat</p>
+        </div>
+        <div class="sotk-card">
+          <div class="sotk-icon"><i class="fas fa-certificate"></i></div>
+          <h4>Kepala LP3M</h4>
+          <p>Lembaga Pengembangan Pembelajaran dan Penjaminan Mutu</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROGRAM STUDI
+       ============================================================ -->
+  <section class="section prodi-section" id="prodi">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Program Studi</span>
+        <h2 class="section-title">Pilihan Prodi Unggulan ITK</h2>
+        <p class="section-desc">
+          Temukan program studi yang relevan dengan kebutuhan industri dan pembangunan IKN.
+          Seluruh prodi jenjang Sarjana (S1) dengan akreditasi yang kompetitif.
+        </p>
+      </div>
+
+      <div class="prodi-grid" id="prodiGrid"></div>
+
+      <div class="prodi-actions">
+        <button class="btn btn-primary" onclick="openAllProdiModal()">
+          <i class="fas fa-list"></i> Lihat Semua 25 Prodi
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PMB 2026
+       ============================================================ -->
+  <section class="section pmb-section" id="pmb">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Penerimaan Mahasiswa Baru</span>
+        <h2 class="section-title">PMB ITK 2026</h2>
+        <p class="section-desc">
+          Tiga jalur pendaftaran tersedia untuk menjadi bagian dari keluarga besar ITK.
+          1.307 kursi untuk 25 program studi jenjang Sarjana (S1).
+        </p>
+      </div>
+
+      <!-- Jalur Cards -->
+      <div class="jalur-grid">
+        <div class="jalur-card">
+          <span class="jalur-badge">Jalur 1</span>
+          <h3>SNBP 2026</h3>
+          <p>Seleksi Nasional Berdasarkan Prestasi — berdasarkan nilai rapor dan prestasi akademik/non-akademik.</p>
+          <ul class="jalur-features">
+            <li><i class="fas fa-check"></i> Tanpa biaya pendaftaran</li>
+            <li><i class="fas fa-check"></i> Berdasarkan nilai rapor semester 1-5</li>
+            <li><i class="fas fa-check"></i> Kuota 20% dari daya tampung</li>
+          </ul>
+          <div class="jalur-timeline"><i class="far fa-calendar-alt"></i> Februari – Maret 2026</div>
+        </div>
+
+        <div class="jalur-card">
+          <span class="jalur-badge">Jalur 2</span>
+          <h3>SNBT 2026 (UTBK)</h3>
+          <p>Seleksi Nasional Berdasarkan Tes — melalui Ujian Tulis Berbasis Komputer yang diselenggarakan nasional.</p>
+          <ul class="jalur-features">
+            <li><i class="fas fa-check"></i> Tes Potensi Skolastik + Literasi</li>
+            <li><i class="fas fa-check"></i> Biaya sesuai ketentuan SNPMB</li>
+            <li><i class="fas fa-check"></i> Kuota 30% dari daya tampung</li>
+          </ul>
+          <div class="jalur-timeline"><i class="far fa-calendar-alt"></i> April – Juni 2026</div>
+        </div>
+
+        <div class="jalur-card">
+          <span class="jalur-badge">Jalur 3</span>
+          <h3>Mandiri ITK 2026</h3>
+          <p>Seleksi mandiri yang diselenggarakan langsung oleh ITK melalui tes potensi akademik dan wawancara.</p>
+          <ul class="jalur-features">
+            <li><i class="fas fa-check"></i> Tes Potensi Akademik (TPA)</li>
+            <li><i class="fas fa-check"></i> Wawancara dan seleksi berkas</li>
+            <li><i class="fas fa-check"></i> Kuota hingga 50% dari daya tampung</li>
+          </ul>
+          <div class="jalur-timeline"><i class="far fa-calendar-alt"></i> Juni – Agustus 2026</div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="pmb-timeline-wrap">
+        <h3><i class="fas fa-calendar-check"></i> Timeline PMB 2026</h3>
+        <div class="pmb-timeline">
+          <div class="timeline-item">
+            <div class="tl-date">Februari</div>
+            <div class="tl-title">Pengumuman SNBP</div>
+            <div class="tl-desc">Pengisian PDSS &amp; pendaftaran SNBP</div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">April</div>
+            <div class="tl-title">Pendaftaran UTBK</div>
+            <div class="tl-desc">Pendaftaran SNBT &amp; pemilihan lokasi</div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">Mei</div>
+            <div class="tl-title">Pelaksanaan UTBK</div>
+            <div class="tl-desc">Tes UTBK-SNBT gelombang 1 &amp; 2</div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">Juni</div>
+            <div class="tl-title">Pengumuman SNBT</div>
+            <div class="tl-desc">Pengumuman hasil seleksi SNBT</div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">Juli – Agustus</div>
+            <div class="tl-title">Mandiri ITK</div>
+            <div class="tl-desc">Pendaftaran, tes, dan pengumuman</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="pmb-cta">
+        <h3>Siap Menjadi Bagian dari ITK?</h3>
+        <p>Daftarkan dirimu sekarang melalui portal resmi PMB ITK.</p>
+        <a href="https://pmb.itk.ac.id" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="fas fa-external-link-alt"></i> Daftar di pmb.itk.ac.id
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RISET & INOVASI
+       ============================================================ -->
+  <section class="section riset-section" id="riset">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Riset &amp; Inovasi</span>
+        <h2 class="section-title">Mendorong Riset untuk Indonesia</h2>
+        <p class="section-desc">
+          ITK terus mendorong penelitian dan inovasi yang berkontribusi pada pembangunan
+          berkelanjutan, khususnya di Kalimantan Timur dan Ibu Kota Nusantara (IKN).
+        </p>
+      </div>
+
+      <!-- Fokus Riset -->
+      <h3 class="subsection-title" style="margin-top: 0;">Fokus Riset Unggulan</h3>
+      <div class="riset-grid">
+        <div class="riset-card">
+          <div class="riset-icon"><i class="fas fa-solar-panel"></i></div>
+          <h3>Energi Baru &amp; Terbarukan</h3>
+          <p>Pengembangan energi surya, biomassa, dan teknologi penyimpanan energi untuk mendukung transisi energi nasional.</p>
+        </div>
+        <div class="riset-card">
+          <div class="riset-icon"><i class="fas fa-water"></i></div>
+          <h3>Teknologi Maritim</h3>
+          <p>Rekayasa kapal, struktur lepas pantai, dan sistem transportasi laut untuk mendukung poros maritim Indonesia.</p>
+        </div>
+        <div class="riset-card">
+          <div class="riset-icon"><i class="fas fa-atom"></i></div>
+          <h3>Material Maju</h3>
+          <p>Penelitian material komposit, logam, dan nanomaterial untuk aplikasi industri dan konstruksi.</p>
+        </div>
+        <div class="riset-card">
+          <div class="riset-icon"><i class="fas fa-microchip"></i></div>
+          <h3>Teknologi Informasi</h3>
+          <p>AI, IoT, keamanan siber, dan sistem cerdas untuk mendukung transformasi digital dan smart city.</p>
+        </div>
+        <div class="riset-card">
+          <div class="riset-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Lingkungan &amp; Kebencanaan</h3>
+          <p>Mitigasi bencana, pengelolaan lingkungan, dan teknologi pengolahan limbah berkelanjutan.</p>
+        </div>
+        <div class="riset-card">
+          <div class="riset-icon"><i class="fas fa-hard-hat"></i></div>
+          <h3>Infrastruktur &amp; Konstruksi</h3>
+          <p>Rekayasa struktur, material konstruksi, dan teknologi bangunan tahan gempa.</p>
+        </div>
+      </div>
+
+      <!-- Inovasi untuk IKN -->
+      <div class="inovasi-ikn">
+        <h3><i class="fas fa-landmark"></i> Inovasi untuk IKN</h3>
+        <p>
+          Sebagai kampus penyangga Ibu Kota Nusantara, ITK aktif menghasilkan inovasi
+          teknologi yang mendukung pembangunan IKN yang cerdas, hijau, dan berkelanjutan.
+        </p>
+        <div class="inovasi-list">
+          <div class="inovasi-item">
+            <i class="fas fa-tint"></i>
+            <div>
+              <strong>Teknologi Air Bersih</strong>
+              <span>Sistem pengolahan air bersih berbasis membran dan IoT untuk kawasan IKN.</span>
+            </div>
+          </div>
+          <div class="inovasi-item">
+            <i class="fas fa-building"></i>
+            <div>
+              <strong>Material Konstruksi Hijau</strong>
+              <span>Pengembangan beton ramah lingkungan dari material lokal Kalimantan.</span>
+            </div>
+          </div>
+          <div class="inovasi-item">
+            <i class="fas fa-bell"></i>
+            <div>
+              <strong>Sistem Peringatan Dini Bencana</strong>
+              <span>Deteksi dini banjir dan kebakaran hutan menggunakan sensor dan AI.</span>
+            </div>
+          </div>
+          <div class="inovasi-item">
+            <i class="fas fa-city"></i>
+            <div>
+              <strong>Smart City Technology</strong>
+              <span>Platform digital untuk manajemen kota cerdas di kawasan IKN.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Riset -->
+      <div class="riset-stats">
+        <div class="riset-stat">
+          <div class="rs-num">200+</div>
+          <div class="rs-lbl">Publikasi Ilmiah</div>
+        </div>
+        <div class="riset-stat">
+          <div class="rs-num">50+</div>
+          <div class="rs-lbl">Penelitian Aktif</div>
+        </div>
+        <div class="riset-stat">
+          <div class="rs-num">30+</div>
+          <div class="rs-lbl">Kerja Sama Industri</div>
+        </div>
+        <div class="riset-stat">
+          <div class="rs-num">15+</div>
+          <div class="rs-lbl">Paten &amp; HKI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BERITA & PENGUMUMAN
+       ============================================================ -->
+  <section class="section news-section" id="berita">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Informasi Terkini</span>
+        <h2 class="section-title">Berita &amp; Pengumuman</h2>
+        <p class="section-desc">Ikuti perkembangan terbaru seputar akademik, riset, dan kemahasiswaan ITK.</p>
+      </div>
+
+      <div class="news-grid" id="newsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER / KONTAK
+       ============================================================ -->
+  <footer class="footer" id="kontak">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#beranda" class="logo">
+            <div class="logo-mark">ITK</div>
+            <div class="logo-text">
+              <strong>Institut Teknologi</strong>
+              <span>Kalimantan</span>
+            </div>
+          </a>
+          <p>
+            Kampus Integritas &amp; Inovasi Penyangga IKN. Building Future Leaders in Technology.
+            SPECTA: Solid, Peduli, Enteleki, Cerdas, Tangguh, Berakhlak.
+          </p>
+          <div class="footer-social">
+            <a href="https://instagram.com/itk_official" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@itk_official" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://linkedin.com/school/itk-official" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://facebook.com/itk.official" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Tautan Cepat</h4>
+          <ul class="footer-links">
+            <li><a href="#beranda"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+            <li><a href="#profil"><i class="fas fa-chevron-right"></i> Profil &amp; SOTK</a></li>
+            <li><a href="#prodi"><i class="fas fa-chevron-right"></i> Program Studi</a></li>
+            <li><a href="#pmb"><i class="fas fa-chevron-right"></i> PMB 2026</a></li>
+            <li><a href="#riset"><i class="fas fa-chevron-right"></i> Riset &amp; Inovasi</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Portal Informasi</h4>
+          <ul class="footer-links">
+            <li><a href="https://pmb.itk.ac.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> PMB ITK</a></li>
+            <li><a href="https://siakad.itk.ac.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> SIAKAD</a></li>
+            <li><a href="https://elearning.itk.ac.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> E-Learning</a></li>
+            <li><a href="https://simaset.itk.ac.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> SIM-ASET</a></li>
+            <li><a href="https://repository.itk.ac.id" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Repositori ITK</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Hubungi Kami</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-location-dot"></i><span>Jl. Soekarno-Hatta Km. 15, Karang Joang, Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76127</span></li>
+            <li><i class="fas fa-phone"></i><span>(0542) 8530800</span></li>
+            <li><i class="fas fa-envelope"></i><span>humas@itk.ac.id</span></li>
+          </ul>
+          <div class="footer-map">
+            <iframe src="https://maps.google.com/maps?q=Institut%20Teknologi%20Kalimantan%20Balikpapan&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Peta Lokasi ITK Balikpapan" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Institut Teknologi Kalimantan. Seluruh hak cipta dilindungi.</span>
+        <span>Dikembangkan untuk tujuan demonstrasi — <a href="https://itk.ac.id" target="_blank" rel="noopener">www.itk.ac.id</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       MODAL: DETAIL PRODI
+       ============================================================ -->
+  <div class="modal" id="prodiModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeProdiModal()">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: SEMUA PRODI
+       ============================================================ -->
+  <div class="modal" id="allProdiModal">
+    <div class="modal-content" style="max-width: 800px;">
+      <button class="modal-close" onclick="closeAllProdiModal()">&times;</button>
+      <h2 style="margin-bottom: 20px;">Daftar Lengkap 25 Program Studi ITK</h2>
+      <div id="allProdiBody"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: SEARCH (MOBILE)
+       ============================================================ -->
+  <div class="modal" id="searchModal">
+    <div class="modal-content search-modal-content">
+      <button class="modal-close" onclick="closeSearchModal()">&times;</button>
+      <h2><i class="fas fa-search" style="color: var(--blue); margin-right: 8px;"></i> Pencarian</h2>
+      <input type="search" id="mobileSearchInput" class="search-modal-input"
+        placeholder="Cari prodi, berita, atau halaman..." autocomplete="off"
+        oninput="handleMobileSearchInput(this.value)">
+      <div class="mobile-search-results" id="mobileSearchResults"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODAL: DETAIL BERITA
+       ============================================================ -->
+  <div class="modal" id="newsModal">
+    <div class="modal-content news-modal-content">
+      <button class="modal-close" onclick="closeNewsModal()">&times;</button>
+      <div id="newsModalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    /* ============================================================
+       DATA PROGRAM STUDI (25 PRODI)
+       ============================================================ */
+    const prodiData = {
+      matematika: { nama: "Matematika", fakultas: "Fakultas Sains dan Teknologi Informasi (FSTI)", jurusan: "Jurusan Sains dan Analitika Data", gelar: "S.Mat.", akreditasi: "Baik", deskripsi: "Program Studi Matematika ITK didirikan berdasarkan SK Dirjen Dikti No. 65/M/Kp/III/2015. Fokus pada pemodelan matematika, analisis numerik, dan penerapan matematika di bidang sains data, keuangan, serta industri.", prospek: ["Data Analyst", "Aktuaris", "Peneliti", "Dosen", "Analis Keuangan"] },
+      aktuaria: { nama: "Ilmu Aktuaria", fakultas: "Fakultas Sains dan Teknologi Informasi (FSTI)", jurusan: "Jurusan Sains dan Analitika Data", gelar: "S.Aktr.", akreditasi: "Baik", deskripsi: "Ilmu yang mempelajari pengelolaan risiko keuangan di masa depan, umumnya terkait asuransi dan dana pensiun. Mahasiswa dibekali matematika aktuaria, statistika, dan pemrograman untuk analisis risiko.", prospek: ["Aktuaris", "Analis Risiko", "Konsultan Asuransi", "Data Scientist", "Analis Investasi"] },
+      statistika: { nama: "Statistika", fakultas: "Fakultas Sains dan Teknologi Informasi (FSTI)", jurusan: "Jurusan Sains dan Analitika Data", gelar: "S.Stat.", akreditasi: "Baik", deskripsi: "Program Studi Statistika ITK resmi didirikan pada 1 Juli 2020. Mempelajari metode pengumpulan, pengolahan, analisis, dan interpretasi data untuk mendukung pengambilan keputusan berbasis bukti.", prospek: ["Data Scientist", "Statistisi", "Business Intelligence Analyst", "Peneliti Pasar", "Analis Data Pemerintahan"] },
+      fisika: { nama: "Fisika", fakultas: "Fakultas Sains dan Teknologi Informasi (FSTI)", jurusan: "Jurusan Sains dan Analitika Data", gelar: "S.Si.", akreditasi: "Baik Sekali", deskripsi: "Program Studi Fisika ITK didirikan pada 2013 bersama lima prodi rintisan lainnya. Mempelajari fenomena alam, material, energi, dan instrumentasi fisika untuk mendukung industri dan riset.", prospek: ["Peneliti", "Quality Control", "Instrumentasi", "Energi Terbarukan", "Dosen"] },
+      informatika: { nama: "Informatika", fakultas: "Fakultas Sains dan Teknologi Informasi (FSTI)", jurusan: "Jurusan Teknik Elektro, Informatika, dan Bisnis", gelar: "S.Kom.", akreditasi: "Baik Sekali & ASIIN", deskripsi: "Program Studi Informatika berdiri pada 2016. Mempelajari ilmu komputer, rekayasa perangkat lunak, kecerdasan buatan, keamanan siber, dan analisis matematis untuk perancangan sistem komputasi.", prospek: ["Software Engineer", "Data Scientist", "AI Engineer", "Web Developer", "Mobile App Developer", "Cybersecurity Analyst"] },
+      sistem_informasi: { nama: "Sistem Informasi", fakultas: "Fakultas Sains dan Teknologi Informasi (FSTI)", jurusan: "Jurusan Teknik Elektro, Informatika, dan Bisnis", gelar: "S.Kom.", akreditasi: "Baik Sekali & ASIIN", deskripsi: "ITK menerima angkatan pertama Prodi Sistem Informasi pada Juli 2013. Fokus pada integrasi teknologi informasi dengan proses bisnis, analisis kebutuhan sistem, dan desain solusi digital organisasi.", prospek: ["System Analyst", "IT Consultant", "ERP Specialist", "Business Intelligence", "UI/UX Designer"] },
+      bisnis_digital: { nama: "Bisnis Digital", fakultas: "Fakultas Sains dan Teknologi Informasi (FSTI)", jurusan: "Jurusan Teknik Elektro, Informatika, dan Bisnis", gelar: "S.Bns.", akreditasi: "Baik", deskripsi: "Program studi yang menciptakan kolaborasi keilmuan bisnis dan teknologi untuk menyiapkan SDM era Industri 4.0. Mempelajari e-commerce, pemasaran digital, analitik bisnis, dan kewirausahaan teknologi.", prospek: ["Digital Marketer", "Data Analyst", "Business Consultant", "Entrepreneur", "Digital Business Manager"] },
+      teknik_elektro: { nama: "Teknik Elektro", fakultas: "Fakultas Sains dan Teknologi Informasi (FSTI)", jurusan: "Jurusan Teknik Elektro, Informatika, dan Bisnis", gelar: "S.T.", akreditasi: "Baik Sekali & ASIIN", deskripsi: "Salah satu prodi rintisan ITK. Mempelajari sistem tenaga listrik, elektronika, kontrol, telekomunikasi, dan instrumentasi untuk mendukung kebutuhan energi dan otomasi industri.", prospek: ["Electrical Engineer", "Power System Engineer", "Control Engineer", "Telecommunication Engineer", "Automation Specialist"] },
+      teknik_biomedis: { nama: "Teknik Biomedis", fakultas: "Fakultas Sains dan Teknologi Informasi (FSTI)", jurusan: "Jurusan Teknik Elektro, Informatika, dan Bisnis", gelar: "S.T.", akreditasi: "Dalam Proses", deskripsi: "Program studi baru yang menggabungkan prinsip teknik dengan ilmu medis untuk pengembangan peralatan kesehatan, biomaterial, dan teknologi rehabilitasi.", prospek: ["Biomedical Engineer", "Medical Device Specialist", "Clinical Engineer", "Peneliti Kesehatan", "Technopreneur Medis"] },
+      teknik_perkapalan: { nama: "Teknik Perkapalan", fakultas: "Fakultas Pembangunan Berkelanjutan (FPB)", jurusan: "Jurusan Teknologi Kemaritiman", gelar: "S.T.", akreditasi: "Baik Sekali", deskripsi: "Prodi rintisan ITK yang mulai berkuliah pada 2012. Mempelajari desain, konstruksi, perawatan, dan operasi kapal serta struktur lepas pantai untuk mendukung industri maritim.", prospek: ["Naval Architect", "Marine Engineer", "Ship Surveyor", "Offshore Engineer", "Konsultan Maritim"] },
+      teknik_kelautan: { nama: "Teknik Kelautan", fakultas: "Fakultas Pembangunan Berkelanjutan (FPB)", jurusan: "Jurusan Teknologi Kemaritiman", gelar: "S.T.", akreditasi: "Baik", deskripsi: "Berdiri berdasarkan SK Menteri Riset, Teknologi, dan Pendidikan Tinggi No. 338/KPT/I/2017. Mempelajari rekayasa pesisir, struktur lepas pantai, dan pemanfaatan sumber daya laut.", prospek: ["Coastal Engineer", "Offshore Structure Engineer", "Oceanographer", "Marine Surveyor", "Konsultan Lingkungan Laut"] },
+      teknik_lingkungan: { nama: "Teknik Lingkungan", fakultas: "Fakultas Pembangunan Berkelanjutan (FPB)", jurusan: "Jurusan Teknologi Kemaritiman", gelar: "S.T.", akreditasi: "Baik", deskripsi: "Mempelajari tindakan preventif dan kuratif untuk menyelamatkan lingkungan, termasuk pengelolaan air, udara, limbah, dan kesehatan lingkungan dengan pendekatan teknologi.", prospek: ["Environmental Engineer", "Konsultan AMDAL", "K3 Officer", "Pengelola Limbah", "Analis Lingkungan"] },
+      teknik_sipil: { nama: "Teknik Sipil", fakultas: "Fakultas Pembangunan Berkelanjutan (FPB)", jurusan: "Jurusan Teknik Sipil dan Perencanaan", gelar: "S.T.", akreditasi: "Baik Sekali & ASIIN", deskripsi: "Prodi rintisan ITK yang memulai perkuliahan sejak awal berdirinya. Mempelajari perencanaan, analisis, pembangunan, dan pemeliharaan infrastruktur seperti bangunan, jalan, jembatan, dan bendungan.", prospek: ["Civil Engineer", "Structural Engineer", "Construction Manager", "Geotechnical Engineer", "Quantity Surveyor"] },
+      pwk: { nama: "Perencanaan Wilayah dan Kota (PWK)", fakultas: "Fakultas Pembangunan Berkelanjutan (FPB)", jurusan: "Jurusan Teknik Sipil dan Perencanaan", gelar: "S.PWK.", akreditasi: "Baik & ASIIN", deskripsi: "Mempelajari prinsip perencanaan, morfologi kota, perpetaan, transportasi, dan desain kawasan dengan mempertimbangkan aspek sosial, ekonomi, dan lingkungan.", prospek: ["Urban Planner", "Regional Planner", "GIS Analyst", "Konsultan Tata Ruang", "Analis Kebijakan Pembangunan"] },
+      arsitektur: { nama: "Arsitektur", fakultas: "Fakultas Pembangunan Berkelanjutan (FPB)", jurusan: "Jurusan Teknik Sipil dan Perencanaan", gelar: "S.Ars.", akreditasi: "Baik", deskripsi: "Mempelajari seni dan ilmu merancang bangunan dan lingkungan binaan dengan mempertimbangkan estetika, fungsi, struktur, dan keberlanjutan.", prospek: ["Architect", "Urban Designer", "Interior Designer", "Building Surveyor", "Konsultan Desain"] },
+      dkv: { nama: "Desain Komunikasi Visual (DKV)", fakultas: "Fakultas Pembangunan Berkelanjutan (FPB)", jurusan: "Jurusan Teknik Sipil dan Perencanaan", gelar: "S.Ds.", akreditasi: "Baik", deskripsi: "Mempelajari desain grafis, media digital, periklanan, dan komunikasi visual dengan memanfaatkan teknologi serta mengangkat nilai budaya Nusantara.", prospek: ["Graphic Designer", "UI/UX Designer", "Art Director", "Content Creator", "Brand Consultant"] },
+      teknik_mesin: { nama: "Teknik Mesin", fakultas: "Fakultas Rekayasa dan Teknologi Industri (FRTI)", jurusan: "Jurusan Teknologi Industri", gelar: "S.T.", akreditasi: "Baik Sekali & ASIIN", deskripsi: "Prodi rintisan ITK. Mempelajari fisika teknik dan prinsip matematika untuk mendesain, menganalisis, membuat, dan memelihara sistem mekanis, konversi energi, dan manufaktur.", prospek: ["Mechanical Design Engineer", "Manufacturing Engineer", "Maintenance Engineer", "Energy Engineer", "Quality Engineer"] },
+      teknik_industri: { nama: "Teknik Industri", fakultas: "Fakultas Rekayasa dan Teknologi Industri (FRTI)", jurusan: "Jurusan Teknologi Industri", gelar: "S.T.", akreditasi: "Baik", deskripsi: "Mempelajari optimasi sistem terintegrasi yang melibatkan manusia, mesin, material, informasi, dan energi untuk meningkatkan produktivitas dan efisiensi industri.", prospek: ["Industrial Engineer", "Supply Chain Analyst", "Production Planner", "Quality Engineer", "Operations Manager"] },
+      teknik_logistik: { nama: "Teknik Logistik", fakultas: "Fakultas Rekayasa dan Teknologi Industri (FRTI)", jurusan: "Jurusan Teknologi Industri", gelar: "S.T.", akreditasi: "Baik", deskripsi: "Mempelajari perencanaan, pengelolaan, dan pengendalian aliran barang, informasi, dan sumber daya untuk mendukung rantai pasok yang efisien.", prospek: ["Logistics Engineer", "Supply Chain Manager", "Warehouse Manager", "Distribution Analyst", "Procurement Specialist"] },
+      material_metalurgi: { nama: "Teknik Material dan Metalurgi", fakultas: "Fakultas Rekayasa dan Teknologi Industri (FRTI)", jurusan: "Jurusan Teknologi Industri", gelar: "S.T.", akreditasi: "Baik Sekali & ASIIN", deskripsi: "Mempelajari sifat, struktur, pemrosesan, dan aplikasi material logam, polimer, keramik, dan komposit untuk industri manufaktur dan energi.", prospek: ["Materials Engineer", "Metallurgical Engineer", "Quality Control", "R&D Engineer", "Corrosion Engineer"] },
+      teknologi_pangan: { nama: "Teknologi Pangan", fakultas: "Fakultas Rekayasa dan Teknologi Industri (FRTI)", jurusan: "Jurusan Rekayasa Industri", gelar: "S.TP.", akreditasi: "Proses Reakreditasi", deskripsi: "Berdiri 5 April 2021. Mempelajari pengolahan, pengawetan, pengemasan, dan keamanan pangan untuk menghasilkan produk pangan yang berkualitas dan inovatif.", prospek: ["Food Technologist", "Quality Assurance", "R&D Pangan", "Produksi Pangan", "Konsultan Keamanan Pangan"] },
+      teknik_kimia: { nama: "Teknik Kimia", fakultas: "Fakultas Rekayasa dan Teknologi Industri (FRTI)", jurusan: "Jurusan Rekayasa Industri", gelar: "S.T.", akreditasi: "Baik Sekali & ASIIN", deskripsi: "Prodi rintisan ITK. Mempelajari proses transformasi bahan baku menjadi produk bernilai tambah melalui reaksi kimia dan operasi fisika-kimia dalam skala industri.", prospek: ["Chemical Engineer", "Process Engineer", "Production Engineer", "Safety Engineer", "R&D Kimia"] },
+      rekayasa_keselamatan: { nama: "Rekayasa Keselamatan", fakultas: "Fakultas Rekayasa dan Teknologi Industri (FRTI)", jurusan: "Jurusan Rekayasa Industri", gelar: "S.T.", akreditasi: "Baik", deskripsi: "Mempelajari peraturan perundang-undangan, manajemen risiko, manajemen insiden, dan efek keselamatan untuk menciptakan lingkungan kerja yang aman dan sehat.", prospek: ["Safety Engineer", "HSE Officer", "Risk Analyst", "Konsultan K3", "Inspektur Keselamatan"] },
+      teknik_sistem_perkapalan: { nama: "Teknik Sistem Perkapalan", fakultas: "Fakultas Pembangunan Berkelanjutan (FPB)", jurusan: "Jurusan Teknologi Kemaritiman", gelar: "S.T.", akreditasi: "Dalam Proses", deskripsi: "Program studi baru yang berfokus pada sistem propulsi, sistem bantu kapal, permesinan kapal, dan integrasi sistem di atas kapal untuk mendukung industri maritim modern.", prospek: ["Marine System Engineer", "Ship Machinery Engineer", "Technical Superintendent", "Surveyor Kapal", "Konsultan Sistem Kelautan"] },
+      teknik_transportasi_laut: { nama: "Teknik Transportasi Laut", fakultas: "Fakultas Pembangunan Berkelanjutan (FPB)", jurusan: "Jurusan Teknologi Kemaritiman", gelar: "S.T.", akreditasi: "Dalam Proses", deskripsi: "Program studi baru yang mempelajari manajemen transportasi laut, logistik maritim, keselamatan pelayaran, dan kebijakan kepelabuhanan untuk mendukung konektivitas maritim.", prospek: ["Maritime Transport Analyst", "Port Operations Manager", "Shipping Manager", "Logistics Planner", "Konsultan Maritim"] }
+    };
+
+    /* ============================================================
+       DATA BERITA
+       ============================================================ */
+    const newsData = [
+      {
+        category: "PMB",
+        date: "1 April 2026",
+        title: "ITK Buka 25 Program Studi dengan 1.307 Kursi pada SNBT-UTBK 2026",
+        excerpt: "ITK kembali membuka penerimaan mahasiswa baru melalui jalur SNBT-UTBK 2026 dengan total 1.307 kursi untuk 25 program studi jenjang sarjana.",
+        content: [
+          "Institut Teknologi Kalimantan (ITK) resmi membuka pendaftaran Seleksi Nasional Berdasarkan Tes (SNBT) melalui Ujian Tulis Berbasis Komputer (UTBK) tahun 2026. Sebanyak <strong>1.307 kursi</strong> disediakan untuk <strong>25 program studi</strong> jenjang Sarjana (S1).",
+          "Pendaftaran SNBT-UTBK 2026 dilakukan melalui portal resmi SNPMB. Calon mahasiswa diharapkan memperhatikan jadwal, persyaratan, dan tata cara pendaftaran yang telah diumumkan secara resmi.",
+          "Rektor ITK menyampaikan bahwa seluruh program studi telah disiapkan untuk menerima mahasiswa baru dengan kualitas pendidikan yang unggul. <em>\"Kami mengundang putra-putri terbaik bangsa untuk bergabung dan menjadi bagian dari generasi pemimpin teknologi masa depan,\"</em> ujarnya.",
+          "Informasi lebih lanjut dapat diakses melalui <strong>pmb.itk.ac.id</strong> atau kanal resmi ITK lainnya."
+        ]
+      },
+      {
+        category: "Riset",
+        date: "20 Juni 2026",
+        title: "Inovasi Dosen ITK untuk Pembangunan IKN",
+        excerpt: "Dosen dan peneliti ITK mengembangkan berbagai inovasi teknologi tepat guna yang mendukung pembangunan Ibu Kota Nusantara (IKN).",
+        content: [
+          "Sebagai kampus penyangga Ibu Kota Nusantara (IKN), Institut Teknologi Kalimantan (ITK) terus mendorong dosen dan penelitinya untuk menghasilkan inovasi yang relevan dengan kebutuhan pembangunan IKN.",
+          "Beberapa inovasi unggulan yang telah dikembangkan meliputi: <strong>teknologi pengolahan air bersih</strong> berbasis membran dan IoT, <strong>material konstruksi hijau</strong> dari bahan lokal Kalimantan, <strong>sistem peringatan dini bencana</strong> berbasis sensor dan AI, serta <strong>platform smart city</strong> untuk manajemen kawasan.",
+          "Kolaborasi dengan berbagai pihak, termasuk pemerintah daerah, industri, dan perguruan tinggi lain, terus dijalin untuk mempercepat hilirisasi riset.",
+          "ITK berkomitmen menjadi mitra strategis dalam pembangunan IKN yang cerdas, hijau, dan berkelanjutan."
+        ]
+      },
+      {
+        category: "Akademik",
+        date: "7 Juli 2026",
+        title: "ITK Resmi Buka 3 Program Studi Baru Strategis",
+        excerpt: "Teknik Biomedis, Teknik Sistem Perkapalan, dan Teknik Transportasi Laut hadir menjawab tantangan maritim dan kesehatan modern.",
+        content: [
+          "Institut Teknologi Kalimantan (ITK) resmi membuka tiga program studi baru yang strategis: <strong>Teknik Biomedis</strong>, <strong>Teknik Sistem Perkapalan</strong>, dan <strong>Teknik Transportasi Laut</strong>.",
+          "<strong>Teknik Biomedis</strong> hadir untuk menjawab kebutuhan tenaga ahli di bidang teknologi kesehatan, peralatan medis, dan biomaterial. Prodi ini menggabungkan prinsip teknik dengan ilmu medis.",
+          "<strong>Teknik Sistem Perkapalan</strong> berfokus pada sistem propulsi, permesinan kapal, dan integrasi sistem di atas kapal. Sementara <strong>Teknik Transportasi Laut</strong> mempelajari manajemen transportasi laut, logistik maritim, dan kebijakan kepelabuhanan.",
+          "Pembukaan tiga prodi baru ini diharapkan semakin memperkuat posisi ITK sebagai institusi pendidikan tinggi teknologi yang relevan dengan kebutuhan industri dan pembangunan nasional, khususnya di sektor maritim dan kesehatan."
+        ]
+      }
+    ];
+
+    /* ============================================================
+       RENDER KARTU PRODI (10 UNGGULAN)
+       ============================================================ */
+    const featuredProdi = [
+      { key: "informatika", icon: "fa-code" },
+      { key: "teknik_sipil", icon: "fa-bridge" },
+      { key: "rekayasa_keselamatan", icon: "fa-helmet-safety" },
+      { key: "teknik_mesin", icon: "fa-gear" },
+      { key: "bisnis_digital", icon: "fa-chart-line" },
+      { key: "pwk", icon: "fa-city" },
+      { key: "sistem_informasi", icon: "fa-database" },
+      { key: "dkv", icon: "fa-palette" },
+      { key: "teknik_lingkungan", icon: "fa-leaf" },
+      { key: "aktuaria", icon: "fa-calculator" }
+    ];
+
+    function renderProdiCards() {
+      const grid = document.getElementById('prodiGrid');
+      grid.innerHTML = featuredProdi.map(({ key, icon }) => {
+        const p = prodiData[key];
+        return `
+          <div class="prodi-card">
+            <div class="prodi-card-top">
+              <div class="prodi-icon"><i class="fas ${icon}"></i></div>
+              <span class="badge-s1">S1</span>
+            </div>
+            <h3>${p.nama}</h3>
+            <span class="badge-akreditasi">${p.akreditasi}</span>
+            <p>${p.deskripsi.slice(0, 90)}...</p>
+            <a href="#" class="prodi-link" onclick="openProdiModal('${key}'); return false;">
+              Selengkapnya <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        `;
+      }).join('');
+    }
+
+    /* ============================================================
+       RENDER KARTU BERITA
+       ============================================================ */
+    function renderNews() {
+      const grid = document.getElementById('newsGrid');
+      const icons = ['fa-newspaper', 'fa-flask', 'fa-ship'];
+      grid.innerHTML = newsData.map((n, i) => `
+        <article class="news-card">
+          <div class="news-thumb"><i class="fas ${icons[i]}"></i></div>
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="category">${n.category}</span>
+              <span><i class="far fa-calendar"></i> ${n.date}</span>
+            </div>
+            <h3>${n.title}</h3>
+            <p>${n.excerpt}</p>
+            <button class="news-read" onclick="openNewsModal(${i})">
+              Baca Selengkapnya <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    /* ============================================================
+       MODAL DETAIL PRODI
+       ============================================================ */
+    function openProdiModal(key) {
+      const p = prodiData[key];
+      if (!p) return;
+      document.getElementById('modalBody').innerHTML = `
+        <span class="modal-badge">S1 — Sarjana</span>
+        <h2>${p.nama}</h2>
+        <div class="modal-meta">
+          <span><i class="fas fa-university"></i> ${p.fakultas}</span>
+          <span><i class="fas fa-sitemap"></i> ${p.jurusan}</span>
+          <span><i class="fas fa-graduation-cap"></i> Gelar: ${p.gelar}</span>
+          <span><i class="fas fa-certificate"></i> Akreditasi: ${p.akreditasi}</span>
+        </div>
+        <p class="modal-desc">${p.deskripsi}</p>
+        <div class="modal-section-title">Prospek Karier</div>
+        <ul class="modal-list">${p.prospek.map(x => `<li>${x}</li>`).join('')}</ul>
+        <a href="https://pmb.itk.ac.id" target="_blank" rel="noopener" class="modal-link">
+          <i class="fas fa-external-link-alt"></i> Informasi PMB Prodi ${p.nama}
+        </a>
+      `;
+      document.getElementById('prodiModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeProdiModal() {
+      document.getElementById('prodiModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    /* ============================================================
+       MODAL SEMUA PRODI
+       ============================================================ */
+    function openAllProdiModal() {
+      const entries = Object.entries(prodiData);
+      document.getElementById('allProdiBody').innerHTML = `
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px;">
+          ${entries.map(([key, p]) => `
+            <div style="background: var(--gray-100); padding: 14px 16px; border-radius: 8px; border: 1px solid var(--gray-200); cursor: pointer; transition: var(--transition);"
+                 onmouseover="this.style.background='var(--blue-light)'"
+                 onmouseout="this.style.background='var(--gray-100)'"
+                 onclick="closeAllProdiModal(); openProdiModal('${key}');">
+              <strong style="font-size: 0.85rem; color: var(--navy); display: block; margin-bottom: 4px;">${p.nama}</strong>
+              <span style="font-size: 0.7rem; color: var(--gray-600);">${p.gelar} · ${p.akreditasi}</span>
+            </div>
+          `).join('')}
+        </div>
+        <p style="margin-top: 20px; font-size: 0.75rem; color: var(--gray-600); text-align: center;">
+          Klik salah satu prodi untuk melihat detail lengkap.
+        </p>
+      `;
+      document.getElementById('allProdiModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeAllProdiModal() {
+      document.getElementById('allProdiModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    /* ============================================================
+       MODAL DETAIL BERITA
+       ============================================================ */
+    function openNewsModal(index) {
+      const n = newsData[index];
+      if (!n) return;
+      document.getElementById('newsModalBody').innerHTML = `
+        <div class="news-modal-meta">
+          <span class="category">${n.category}</span>
+          <span class="date"><i class="far fa-calendar"></i> ${n.date}</span>
+        </div>
+        <h2>${n.title}</h2>
+        <div class="news-modal-body">
+          ${n.content.map(p => `<p>${p}</p>`).join('')}
+        </div>
+      `;
+      document.getElementById('newsModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNewsModal() {
+      document.getElementById('newsModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    /* ============================================================
+       SEARCH INDEX
+       ============================================================ */
+    const searchIndex = [
+      { title: "Beranda", type: "Halaman", keywords: "beranda home utama itk institut teknologi kalimantan", action: () => scrollToSection('beranda') },
+      { title: "Profil & SOTK Institut", type: "Halaman", keywords: "profil sotk struktur organisasi visi misi rektor dekan wakil rektor lppm lp3m", action: () => scrollToSection('profil') },
+      { title: "Program Studi ITK", type: "Halaman", keywords: "program studi prodi jurusan fakultas s1 sarjana", action: () => scrollToSection('prodi') },
+      { title: "PMB 2026 — Pendaftaran Mahasiswa Baru", type: "Halaman", keywords: "pmb 2026 pendaftaran snbp snbt utbk mandiri mahasiswa baru", action: () => scrollToSection('pmb') },
+      { title: "Riset & Inovasi ITK", type: "Halaman", keywords: "riset penelitian inovasi lppm ikn material energi maritim", action: () => scrollToSection('riset') },
+      { title: "Berita & Pengumuman", type: "Halaman", keywords: "berita pengumuman informasi terkini news", action: () => scrollToSection('berita') },
+      { title: "Kontak & Lokasi", type: "Halaman", keywords: "kontak alamat telepon email humas peta lokasi maps", action: () => scrollToSection('kontak') },
+      ...Object.entries(prodiData).map(([key, p]) => ({
+        title: p.nama,
+        subtitle: p.fakultas,
+        type: "Program Studi",
+        keywords: `${p.nama} ${p.fakultas} ${p.jurusan} ${p.gelar} ${p.akreditasi}`.toLowerCase(),
+        action: () => { scrollToSection('prodi'); setTimeout(() => openProdiModal(key), 350); }
+      })),
+      ...newsData.map((n, i) => ({
+        title: n.title,
+        subtitle: n.category + " · " + n.date,
+        type: "Berita",
+        keywords: `${n.title} ${n.category} ${n.excerpt}`.toLowerCase(),
+        action: () => openNewsModal(i)
+      }))
+    ];
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function performSearch(query) {
+      if (!query || query.trim().length < 2) return [];
+      const q = query.toLowerCase().trim();
+      return searchIndex.filter(item =>
+        item.title.toLowerCase().includes(q) ||
+        (item.keywords && item.keywords.includes(q))
+      ).slice(0, 12);
+    }
+
+    /* ============================================================
+       SEARCH — DESKTOP (Dropdown)
+       ============================================================ */
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+    const navSearchWrap = document.getElementById('navSearchWrap');
+
+    function renderSearchResults(container, query) {
+      const results = performSearch(query);
+      if (!query || query.trim().length < 2) {
+        container.classList.remove('active');
+        return;
+      }
+      if (results.length === 0) {
+        container.innerHTML = `<div class="search-empty">Tidak ada hasil untuk "<strong>${escapeHtml(query)}</strong>"</div>`;
+        container.classList.add('active');
+        return;
+      }
+      container.innerHTML = results.map((r, i) => `
+        <div class="search-result-item" data-index="${i}">
+          <div class="search-result-type">${r.type}</div>
+          <div class="search-result-title">${highlightMatch(r.title, query)}</div>
+          ${r.subtitle ? `<div class="search-result-subtitle">${r.subtitle}</div>` : ''}
+        </div>
+      `).join('');
+      container.classList.add('active');
+
+      // Attach click handlers
+      container.querySelectorAll('.search-result-item').forEach(el => {
+        el.addEventListener('click', () => {
+          const idx = parseInt(el.dataset.index);
+          closeAllSearchResults();
+          if (results[idx] && results[idx].action) results[idx].action();
+        });
+      });
+    }
+
+    function highlightMatch(text, query) {
+      if (!query) return text;
+      const re = new RegExp('(' + escapeRegex(query) + ')', 'gi');
+      return text.replace(re, '<mark style="background: rgba(242,169,0,0.3); color: var(--navy); padding: 0 2px; border-radius: 2px;">$1</mark>');
+    }
+    function escapeRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+    function escapeHtml(s) { return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        renderSearchResults(searchResults, this.value);
+      });
+      searchInput.addEventListener('focus', function() {
+        if (this.value.trim().length >= 2) {
+          renderSearchResults(searchResults, this.value);
+        }
+      });
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          const first = searchResults.querySelector('.search-result-item');
+          if (first) first.click();
+        }
+        if (e.key === 'Escape') {
+          searchResults.classList.remove('active');
+          this.blur();
+        }
+      });
+    }
+
+    document.addEventListener('click', function(e) {
+      if (navSearchWrap && !navSearchWrap.contains(e.target)) {
+        searchResults.classList.remove('active');
+      }
+    });
+
+    /* ============================================================
+       SEARCH — MOBILE (Modal)
+       ============================================================ */
+    function openSearchModal() {
+      document.getElementById('searchModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => document.getElementById('mobileSearchInput').focus(), 150);
+    }
+    function closeSearchModal() {
+      document.getElementById('searchModal').classList.remove('active');
+      document.body.style.overflow = '';
+      document.getElementById('mobileSearchInput').value = '';
+      document.getElementById('mobileSearchResults').classList.remove('active');
+      document.getElementById('mobileSearchResults').innerHTML = '';
+    }
+    function handleMobileSearchInput(query) {
+      const container = document.getElementById('mobileSearchResults');
+      renderSearchResults(container, query);
+    }
+
+    /* ============================================================
+       CLOSE ALL MODALS ON OUTSIDE CLICK / ESC
+       ============================================================ */
+    function closeAllSearchResults() {
+      searchResults.classList.remove('active');
+      if (searchInput) searchInput.value = '';
+    }
+
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal.active').forEach(m => {
+          m.classList.remove('active');
+        });
+        document.body.style.overflow = '';
+        if (searchResults) searchResults.classList.remove('active');
+      }
+    });
+
+    /* ============================================================
+       MENU MOBILE
+       ============================================================ */
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    menuToggle.addEventListener('click', function () {
+      navMenu.classList.toggle('open');
+      const icon = this.querySelector('i');
+      if (navMenu.classList.contains('open')) {
+        icon.classList.replace('fa-bars', 'fa-times');
+      } else {
+        icon.classList.replace('fa-times', 'fa-bars');
+      }
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navMenu.classList.contains('open')) {
+          navMenu.classList.remove('open');
+          const icon = menuToggle.querySelector('i');
+          icon.classList.replace('fa-times', 'fa-bars');
+        }
+      });
+    });
+
+    /* ============================================================
+       SCROLL SPY — Highlight menu aktif saat scroll
+       ============================================================ */
+    const navSections = ['beranda', 'profil', 'prodi', 'pmb', 'riset', 'berita', 'kontak'];
+    const navLinks = document.querySelectorAll('.nav-menu > li > a');
+
+    function updateActiveNav() {
+      const scrollPos = window.scrollY + 150;
+      let current = 'beranda';
+      navSections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollPos) current = id;
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href === '#' + current) link.classList.add('active');
+      });
+    }
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    window.addEventListener('load', updateActiveNav);
+
+    /* ============================================================
+       INISIALISASI
+       ============================================================ */
+    renderProdiCards();
+    renderNews();
+  </script>
+</body>
+</html>
